@@ -144,7 +144,7 @@ def nominatim_geocode(address):
 
 def geocode_address(address):
     """Attempt geocoding using multiple services in order."""
-    for method in [census_geocode, arcgis_geocode, nominatim_geocode]:
+    for method in [arcgis_geocode, nominatim_geocode, census_geocode]:
         try:
             return method(address)
         except Exception:
